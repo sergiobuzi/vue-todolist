@@ -36,6 +36,14 @@ createApp({
             ],
 
         }
+    },
+
+    methods: {
+        delTodo(i){
+            this.todos.splice(i, 1);
+        },
     }
+
+   
     
 }).mount('#app')

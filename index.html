@@ -20,7 +20,7 @@
         <div class="new-task">
 
             <input type="text" placeholder="Inserisci Nuova Task"> 
-            <button @click="addTask">Aggiungi</button>
+            <button @click="addTodo">Aggiungi</button>
 
         </div>
 
@@ -30,11 +30,11 @@
         <div class="todos-container">
 
             <ul>
-                
-                <li class="todo" v-for="(currentTodo, i) in todos" :key="i">
 
-                    <span class="todo-text" >{{todos[activeTodo].text}}</span>
-                    <i class="fa-solid fa-xmark"></i>
+                <li class="todo" v-for="(currentTodo, i) in todos" :key="i" :class="currentTodo.done === true ? 'marked' : '' ">
+
+                    <span class="todo-text" >{{currentTodo.text}}</span>
+                    <i class="fa-solid fa-xmark" @click="delTodo(i)"></i>
 
                 </li>
 
