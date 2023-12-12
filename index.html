@@ -8,16 +8,41 @@
     <link rel="stylesheet" href="style.css">
     <!-- link Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <!-- link a font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     
     <div id="app">
 
 
+        <!-- gestione input task -->
+        <div class="new-task">
+
+            <input type="text" placeholder="Inserisci Nuova Task"> 
+            <button @click="addTask">Aggiungi</button>
+
+        </div>
 
 
-        
+
+        <!-- output todo -->
+        <div class="todos-container">
+
+            <ul>
+                
+                <li class="todo" v-for="(currentTodo, i) in todos" :key="i">
+
+                    <span class="todo-text" >{{todos[activeTodo].text}}</span>
+                    <i class="fa-solid fa-xmark"></i>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
     </div>
 
 
