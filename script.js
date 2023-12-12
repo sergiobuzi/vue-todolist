@@ -41,11 +41,11 @@ createApp({
     },
 
     methods: {
-        delTodo(i){
+        delTodo(i) {
             this.todos.splice(i, 1);
         },
 
-        addTodo(){
+        addTodo() {
             this.todos.unshift ({
                 text: this.message,
                 done: false
@@ -53,6 +53,10 @@ createApp({
             //queasto comando mi fa tornare l input text vuoto  dopo aver inviato la stringa con il bottone
             this.message= "";
             console.log(this.todos);
+        },
+
+        changeDone(i) {
+            this.todos[i].done = !this.todos[i].done;
         },
     }
     

@@ -31,7 +31,7 @@
 
             <ul>
 
-                <li class="todo" v-for="(currentTodo, i) in todos" :key="i" :class="currentTodo.done === true ? 'marked' : '' ">
+                <li class="todo" v-for="(currentTodo, i) in todos" :key="i" :class="currentTodo.done === true ? 'marked' : '' " @click="changeDone(i)">
 
                     <span class="todo-text" >{{currentTodo.text}}</span>
                     <i class="fa-solid fa-xmark" @click="delTodo(i)"></i>
