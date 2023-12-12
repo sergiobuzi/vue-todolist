@@ -20,6 +20,8 @@ createApp({
 
             activeTodo: 0,
 
+            message:"",
+
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -42,8 +44,16 @@ createApp({
         delTodo(i){
             this.todos.splice(i, 1);
         },
-    }
 
-   
+        addTodo(){
+            this.todos.unshift ({
+                text: this.message,
+                done: false
+            });
+            //queasto comando mi fa tornare l input text vuoto  dopo aver inviato la stringa con il bottone
+            this.message= "";
+            console.log(this.todos);
+        },
+    }
     
 }).mount('#app')

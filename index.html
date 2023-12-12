@@ -19,7 +19,7 @@
         <!-- gestione input task -->
         <div class="new-task">
 
-            <input type="text" placeholder="Inserisci Nuova Task"> 
+            <input type="text" placeholder="Inserisci Nuovo Todo" v-model="message" @keyup.enter="addTodo"> 
             <button @click="addTodo">Aggiungi</button>
 
         </div>
