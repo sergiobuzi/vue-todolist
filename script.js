@@ -17,11 +17,13 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
-
+            //imposto la flag a 0
             activeTodo: 0,
 
+            //completo la funzione v-model nell'html
             message:"",
 
+            //array di oggetti di base
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -41,10 +43,14 @@ createApp({
     },
 
     methods: {
+
+        //funzione per eliminnare il todo tramite la x. splice ci consente di eliminare il todo selezionato in todos
         delTodo(i) {
             this.todos.splice(i, 1);
         },
 
+
+        //funzione per aggiungere  il todo tramite il v-model con la struttura di un oggetto. unshift ci consente di inserirlo nell'array come primo della lista
         addTodo() {
             this.todos.unshift ({
                 text: this.message,
@@ -55,6 +61,7 @@ createApp({
             console.log(this.todos);
         },
 
+        //funzione che mi consente di cambiare done
         changeDone(i) {
             this.todos[i].done = !this.todos[i].done;
         },
